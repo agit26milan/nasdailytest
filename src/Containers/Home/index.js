@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import _ from 'lodash'
+import { Container, Row } from 'react-bootstrap'
 import { request } from '../../Utils'
-
+import Navbar from '../../Components/Navbar'
+import Searchbar from '../../Components/Search'
+import Card from '../../Components/Card'
 const HomeContainers = () => {
   const [listStory, setListStory] = useState([])
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(30)
   const [loading, setLoading] = useState(true)
+  
   const getListData = () => {
     const url = '/topstories.json?print=pretty'
     request(url, 'GET', {}, (response) => {
-      console.log(response)
       handleLooping(response.data)
     }, (e) => {
       console.log(e, 'kuku')
@@ -32,6 +36,8 @@ const HomeContainers = () => {
   }, [])
 
   const handleLooping = (arr) => {
+    const more = page * perPage
+    console.log(more, 'mana')
     for (var i = 0; i < arr.length; i++) {
       getDetailStory(arr[i]).then((data) => {
         setListStory((oldData) => [...oldData, data])
@@ -40,9 +46,19 @@ const HomeContainers = () => {
   }
 
   return (
-    <div>
-     
-    </div>
+    <>
+      <Navbar />
+      <Searchbar />
+      <Container>
+        <Row className='m-top10'>
+          {listStory && listStory.length > 0 && listStory.map((x, index) => (
+            <div key={index}>
+              <Card data={x} />
+            </div>
+          ))}
+        </Row>
+      </Container>
+    </>
   )
 }
 

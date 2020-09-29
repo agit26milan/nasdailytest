@@ -1,3 +1,8 @@
+@font-face {
+  font-family: fatFrankReg;
+  src: url(./Assets/Fonts/FatFrank-Regular.otf);
+}
+
 .App {
   text-align: center;
 }
@@ -27,6 +32,76 @@
 .App-link {
   color: #61dafb;
 }
+
+.hacker {
+  color: #FFC700 !important;
+  font-family: fatFrankReg;
+  font-size: 25px !important;
+  line-height: 30px !important;
+  text-align: center;
+}
+
+.news {
+  color: #000000 !important;
+  font-family: fatFrankReg;
+  font-size: 25px !important;
+  line-height: 30px !important;
+  text-align: center;
+}
+
+.rectangle-search {
+  background-color: #FFC700;
+  height: 44px;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.full-width p {
+  margin-bottom: 0;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
+.rectangle-search input {
+  background: transparent;
+  display: block;
+  outline: none;
+  width: 90%;
+  height: 30px;
+  top: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #333;
+  border-bottom-width:1 !important ;
+  border-bottom-color: #f2f2f2 !important;
+  border-top-width: 0;
+  border-left-width: 0 ;
+  border-right-width: 0;
+}
+
+
+
+.text-center {
+  text-align: center !important;
+}
+
+.no-pad {
+  padding: 0px !important;
+}
+
+.m-top10 {
+  margin-top: 10px;
+}
+
+.p-left5 {
+  padding-left: 5px;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

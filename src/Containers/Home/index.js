@@ -34,20 +34,22 @@ const HomeContainers = () => {
     })
   }
 
-  const handleLooping = (arr) => {
+  const handleLooping = async (arr) => {
     const more = totalPage - (page * perPage)
     for (var i = more; i < arr.length - ((page - 1) * perPage); i++) {
-      getDetailStory(arr[i]).then((data) => {
-        console.log(data, 'minat')
+      await getDetailStory(arr[i]).then(async (data) => {
         if (data) {
-          setListStory((oldData) => [...oldData, data])
+          await setListStory((oldData) => [...oldData, data])
         }
       })
     }
-    setLoading((oldState) => !oldState)
+    setLoading(false)
   }
 
-  const onNextScroll = () => setPage((oldState) => oldState + 1)
+  const onNextScroll = () => {
+    setLoading(true)
+    setPage((oldState) => oldState + 1)
+  }
 
   useEffect(() => {
     getListData()
@@ -71,9 +73,7 @@ const HomeContainers = () => {
             loader={
               <>
                 {listStory.length < totalPage && (
-                  <Spinner animation='border' role='status'>
-                    <span className='sr-only'>Loading...</span>
-                  </Spinner>
+                  <p>Fetching data...</p>
                 )}
               </>
             }
@@ -86,7 +86,7 @@ const HomeContainers = () => {
           </InfiniteScroll>
         </Row>
       </Container>
-      <Footer />
+      <Footer loading={loading} />
     </>
   )
 }

@@ -143,6 +143,14 @@ p {
   font-family: fatFrankReg;
 }
 
+.w50 {
+  width: 50% !important;
+}
+
+.m-auto {
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

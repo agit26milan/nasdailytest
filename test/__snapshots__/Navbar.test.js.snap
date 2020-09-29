@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should make snapshot should same as snapshot 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-light"
+  id="navbar"
+>
+  <a
+    className="hacker navbar-brand"
+    href="/"
+  >
+    HACKER
+    <b
+      className="news"
+    >
+      NEWS
+    </b>
+  </a>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+</nav>
+`;

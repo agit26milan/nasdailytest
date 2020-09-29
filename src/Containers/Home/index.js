@@ -59,7 +59,7 @@ const HomeContainers = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar id='navbar' />
       <Searchbar />
       <Container>
         <Row className='m-top10'>

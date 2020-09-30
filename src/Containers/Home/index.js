@@ -61,7 +61,7 @@ const HomeContainers = () => {
 
   return (
     <>
-      <Navbar id='navbar' />
+      <Navbar />
       <Searchbar />
       <Container>
         <Row className='m-top10'>

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should same as snapshot same as snapshot 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-light"
+    id="navbar"
+  >
+    <a
+      className="hacker navbar-brand"
+      href="/"
+    >
+      HACKER
+      <b
+        className="news"
+      >
+        NEWS
+      </b>
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+  </nav>,
+  <div
+    className="row rectangle-search pad5"
+  >
+    <div
+      className="col-10 p-left5"
+    >
+      <input
+        id="inputSearch"
+      />
+    </div>
+    <div
+      className="col-2 text-center no-pad"
+    >
+      <svg
+        color="white"
+        fill="currentColor"
+        height={20}
+        size={20}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+        viewBox="0 0 512 512"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+        />
+      </svg>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="m-top10 row"
+    >
+      <div
+        className="infinite-scroll-component__outerdiv"
+        style={Object {}}
+      >
+        <div
+          className="infinite-scroll-component "
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "height": "auto",
+              "overflow": "auto",
+            }
+          }
+        >
+          <p>
+            Fetching data...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="rectangle-footer"
+  >
+    <h2>
+      HACKERNEWS.
+    </h2>
+  </div>,
+]
+`;

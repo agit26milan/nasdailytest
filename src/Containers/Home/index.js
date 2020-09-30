@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
-import { Container, Row, Spinner } from 'react-bootstrap'
+import { Container, Row, Spinner, Col, Button } from 'react-bootstrap'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { request } from '../../Utils'
 import Navbar from '../../Components/Navbar'
@@ -13,9 +13,10 @@ const HomeContainers = () => {
   const [perPage, setPerPage] = useState(10)
   const [totalPage, setTotalPage] = useState(476)
   const [loading, setLoading] = useState(true)
+  const [type, setType] = useState('top')
 
   const getListData = () => {
-    const url = '/topstories.json?print=pretty'
+    const url = `/${type}stories.json?print=pretty`
     request(url, 'GET', {}, (response) => {
       handleLooping(response.data)
     }, (e) => {
@@ -51,6 +52,11 @@ const HomeContainers = () => {
     setPage((oldState) => oldState + 1)
   }
 
+  const setTypeNews = (type) => {
+    setListStory([])
+    setType(type)
+  }
+
   useEffect(() => {
     getListData()
   }, [])
@@ -59,13 +65,22 @@ const HomeContainers = () => {
     getListData()
   }, [page])
 
+  useEffect(() => {
+    getListData()
+  }, [type])
+
   return (
     <>
       <Navbar />
       <Searchbar />
       <Container>
         <Row className='m-top10'>
-
+          <Col xs={6} sm={6} md={6} lg={6} xl={6} >
+            <Button onClick={() => setTypeNews('new')} variant={type === 'new' ? 'warning' : 'secondary'} className='full-width' >New stories</Button>
+          </Col>
+          <Col xs={6} sm={6} md={6} lg={6} xl={6} >
+            <Button onClick={() => setTypeNews('top')} variant={type === 'top' ? 'warning' : 'secondary'} className='full-width' >Top stories</Button>
+          </Col>
           <InfiniteScroll
             dataLength={listStory.length}
             next={onNextScroll}
